@@ -189,8 +189,13 @@ internal class GlbFileBuilder : IGlbFileBuilder
 	}
 
 	private void mapCollection<T>(Dictionary<string, T> map, T[] values)
-						where T : IGltfNamedObject
+		where T : IGltfNamedObject
 	{
+		if (values == null)
+		{
+			return;
+		}
+
 		for (int i = 0; i < values.Length; i++)
 		{
 			var gltf = values[i];
