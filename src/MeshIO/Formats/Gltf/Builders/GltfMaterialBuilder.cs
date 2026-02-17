@@ -17,6 +17,7 @@ internal class GltfMaterialBuilder : GltfObjectBuilder<GltfMaterial>
 
 		if (this.GltfObject.PbrMetallicRoughness != null)
 		{
+
 		}
 
 		if (this.GltfObject.NormalTexture != null
@@ -39,10 +40,5 @@ internal class GltfMaterialBuilder : GltfObjectBuilder<GltfMaterial>
 		{
 			pbrMat.EmissiveTexture = emissiveBuilder.Texture;
 		}
-	}
-
-	private Texture processTexture(GlbFileBuilder builder)
-	{
-		throw new System.NotImplementedException();
 	}
 }

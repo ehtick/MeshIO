@@ -40,14 +40,24 @@ internal abstract class FbxMaterialBuilder<T> : FbxObjectBuilder<T>
 			_element.EmissiveFactor = emissiveFactor.ToProperty().GetValue<double>();
 		}
 
-		if (properties.Remove("AmbientColor", out FbxProperty AmbientColor))
+		if (properties.Remove("AmbientColor", out FbxProperty ambientColor))
 		{
-			_element.AmbientColor = emissiveFactor.ToProperty().GetValue<Color>();
+			_element.AmbientColor = ambientColor.ToProperty().GetValue<Color>();
 		}
 
 		if (properties.Remove("AmbientFactor", out FbxProperty ambientFactor))
 		{
 			_element.AmbientFactor = ambientFactor.ToProperty().GetValue<double>();
+		}
+
+		if (properties.Remove("DiffuseColor", out FbxProperty diffuseColor))
+		{
+			_element.DiffuseColor = diffuseColor.ToProperty().GetValue<Color>();
+		}
+
+		if (properties.Remove("DiffuseFactor", out FbxProperty diffuseFactor))
+		{
+			_element.DiffuseFactor = diffuseFactor.ToProperty().GetValue<double>();
 		}
 
 		base.buildProperties(properties);
