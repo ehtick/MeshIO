@@ -28,14 +28,14 @@ internal class GltfMaterialBuilder : GltfObjectBuilder<GltfMaterial>
 		}
 
 		if (this.GltfObject.OcclusionTexture != null
-			&& builder.TryGetBuilder(this.GltfObject.NormalTexture.Index,
+			&& builder.TryGetBuilder(this.GltfObject.OcclusionTexture.Index,
 			out GltfTextureBuilder occlusionBuilder))
 		{
 			pbrMat.OcclusionTexture = occlusionBuilder.Texture;
 		}
 
 		if (this.GltfObject.EmissiveTexture != null 
-			&& builder.TryGetBuilder(this.GltfObject.NormalTexture.Index,
+			&& builder.TryGetBuilder(this.GltfObject.EmissiveTexture.Index,
 			out GltfTextureBuilder emissiveBuilder))
 		{
 			pbrMat.EmissiveTexture = emissiveBuilder.Texture;
